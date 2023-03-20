@@ -1,15 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+import NavBar from "./components/NavBar";
+import { Route, Routes } from "react-router-dom";
+import About from "./pages/About";
+import Homepage from "./pages/Homepage";
+import Contact from "./pages/Contact";
+import styled from "styled-components";
 
-function App() {
-  const [count, setCount] = useState(0)
+const BodyContainer = styled.main`
+  margin: 0 12px;
+  
+`;
 
-  return (
-    <div className="App">
-      <h1>Coming soon...</h1>
-    </div>
-  )
-}
+const App = () => (
+  <>
+    <NavBar />
+    <BodyContainer>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </BodyContainer>
+  </>
+);
 
-export default App
+export default App;
