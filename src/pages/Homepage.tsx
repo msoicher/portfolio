@@ -10,14 +10,18 @@ export const Container = styled.div`
 `;
 
 const IntroContainer = styled.div<{ flex: number }>`
-  flex: ${(props) => props.flex}
+  flex: ${(props) => props.flex};
 `;
 
+const H1 = styled.h1`
+  margin-bottom: 40px;
+`;
 
 const Homepage = (props: any) => (
   <Container ref={props.refProp}>
     <IntroContainer flex={1}>
-      <h1>{`Hi! My name is Matt Soicher. Welcome to my website :)`}</h1>
+      <H1>{`Hi! My name is Matt Soicher. Welcome to my website :)`}</H1>
+      <>Please note that this website is a work in progress...Very barebones</>
     </IntroContainer>
     <IntroContainer flex={1}>
       <img src={me} />
